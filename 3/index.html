@@ -7,13 +7,18 @@
 </head>
 <body>
     <script>
-    const a = prompt("Введите числа");
-    const b = prompt("Введите числа");
-    if (a > b) {
-        alert("Большее a")
+    let name = prompt("Введите имя");
+    if (name === 0 || name === '') {
+        alert("Имя пустое")
     }
-    else if (a < b) {
-        alert("Большее b")
+    else if (name.lenght > 2) {
+        alert("Имя слишком короткое");
+    }
+    else if (name.lenght > 50) {
+        alert("Имя слишком длинное");
+    }
+    else {
+        alert("Ваше имя" + name)
     }
     </script>
 
