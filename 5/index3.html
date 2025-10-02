@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let cifrki = prompt("Введите целое положительное число");
+    let number = parseInt(cifrki);
+    if (isNaN(number) || number <= 0) {
+        console.log("Ошибка:Введено нецелое положительное число");
+    } else {
+        console.log(`Делители числа ${number}:`);
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0) {
+                console.log(i);
+            }
+        }
+    }
+    </script>
+</body>
+</html>
