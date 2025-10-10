@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const names=["Илон","Павел","Джефф","Евгений","Билл"];
+        function napishiimya() {
+            for (let i = 0; i < 3; i++) {
+                let username = prompt (`Введите имя ${i + 1}:`);
+                if (username !== 0 && username.trim() !== '') {
+                    names.push(username.trim());
+                    console.log (`Имя "${username} добавлено в массив"`);
+                } else {
+                    console.log(`Имя "${i + 1}" не добавлено в массив`);
+                }
+                }
+                console.log("Итоговый массив имён:", names);
+            }
+            napishiimya();
+        
+    </script>
+</body>
+</html>
