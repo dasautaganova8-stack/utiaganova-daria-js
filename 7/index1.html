@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+// Объявляем функцию pam, которая принимает два аргумента:
+
+function pam(arr, callback) {
+  // 1. Создаем новый пустой массив для результатов
+  const results = [];
+
+  // 2. Перебираем каждый элемент исходного массива
+  for (let i = 0; i < arr.length; i++) {
+    // 3. Вызываем callback-функцию для текущего элемента
+    
+    const result = callback(arr[i], i, arr);
+
+    // 4. Добавляем результат вызова callback в новый массив
+    results.push(result);
+  }
+
+  // 5. Возвращаем новый массив с результатами
+  return results;
+}
+
+// Пример использования:
+const numbers = [1, 2, 3, 4];
+
+// Вызов функции pam с callback'ом, который умножает число на 2
+const a = pam(numbers, function(num, index, arr) {
+  console.log(num,index,arr);
+  return num * 3;
+});
+
+console.log('Результат:', a);
+</script>
+</body>
+</html>
