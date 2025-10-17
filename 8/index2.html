@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+async function getPost(id = null) {
+    try {
+        let url = 'https://jsonplaceholder.typicode.com/posts';
+        
+        // Если передан id, добавляем его к URL
+        if (id !== null) {
+            url += `/${id}`;
+        }
+        
+        const response = await fetch(url);
+        
+        // Проверяем статус ответа
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const post = await response.json();
+        return post;
+        
+    } catch (error) {
+        console.error('Ошибка при получении поста:', error);
+        throw error;
+    }
+}
+
+// Примеры использования:
+
+// Получить все посты
+getPost()
+    .then(posts => console.log('Все посты:', posts))
+    .catch(error => console.error('Ошибка:', error));
+
+// Получить пост с id = 1
+getPost(1)
+    .then(post => console.log('Пост 1:', post))
+    .catch(error => console.error('Ошибка:', error));
+
+// Получить пост с id = 5
+getPost(5)
+    .then(post => console.log('Пост 5:', post))
+    .catch(error => console.error('Ошибка:', error));
+    </script>
+</body>
+</html>
