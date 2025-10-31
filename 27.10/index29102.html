@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const infa = {
+            name: 'Dasha'
+        }
+        infa.age = 18;
+        infa.color = 'white';
+        infa.pretty = false;
+        infa.pretty = true;
+        delete infa.color;
+        infa['age']= 18.5;
+        const gde = 'county';
+        infa[gde] = 'Russia';
+       
+        const animals = {
+            type: 'cat and dog',
+            name: {
+                girl: 'Stesha',
+                boy: 'Baffik',
+                man: 'Instasamka'
+            }
+        }
+        delete animals.name['man'];
+
+        const film1 = 'sumerki';
+        const film2 = 'Vampire';
+        const favoriteFilms = {
+            film1,
+            film2,
+            film3: 'Hatico'
+        }
+       const myCity = {
+        city: 'Казань',
+        cityGreeting: function () {
+            console.log('Круто!!!')
+        }
+       }
+        myCity.cityGreeting()
+
+    const myKity = {
+        city: 'Казань'
+        cityGreeting() {
+            console.log('Круто!!!')
+        }  
+       }
+    myKity.cityGreeting()
+
+
+        
+
+    </script>
+</body>
+</html>
